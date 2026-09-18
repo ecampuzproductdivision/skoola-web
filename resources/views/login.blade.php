@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/kejarkarir.css') }}">
   </head>
 
-  <body>
+  <body class="bg-primary" style="--ds-bg-opacity: 0.10;">
     <main class="d-flex flex-column justify-content-center vh-100">
       <!--Sign up start-->
       <section>

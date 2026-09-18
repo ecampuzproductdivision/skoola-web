@@ -1,7 +1,7 @@
 ﻿# KejarKarir — Design Rules & Guidelines
 
 > **Project:** KejarKarir Admin Dashboard (Laravel + Blade, Bootstrap 5, Public Sans)
-> **Primary color:** `#cd9536` · **Secondary color:** `#76ab26`
+> **Primary color:** `#37618A` · **Secondary color:** `#EF8781`
 > This document is the single source of truth for visual design decisions. Always align new UI with these rules.
 
 ---
@@ -22,38 +22,38 @@
 
 | Token | Hex | Role |
 |-------|-----|------|
-| **Primary**  | `#cd9536` | Brand gold — primary buttons, active states, key highlights, focus rings |
-| **Secondary**| `#76ab26` | Brand green — supporting accents, success-adjacent actions, badges, charts |
+| **Primary**  | `#37618A` | Brand blue — primary buttons, active states, key highlights, focus rings |
+| **Secondary**| `#EF8781` | Brand coral — supporting accents, success-adjacent actions, badges, charts |
 
-**Primary scale (`#cd9536`)**
-
-| Token | Hex |
-|-------|-----|
-| Primary-50  | `#fdf4e3` |
-| Primary-100 | `#f9e3ba` |
-| Primary-200 | `#f2d08f` |
-| Primary-300 | `#e9ba64` |
-| Primary-400 | `#dda74b` |
-| **Primary-500** | **`#cd9536`** (base) |
-| Primary-600 | `#b57e2c` |
-| Primary-700 | `#9a681f` |
-| Primary-800 | `#7f5218` |
-| Primary-900 | `#5f3d11` |
-
-**Secondary (`#76ab26`) — green scale**
+**Primary scale (`#37618A`)**
 
 | Token | Hex |
 |-------|-----|
-| Secondary-50  | `#f2f9e8` |
-| Secondary-100 | `#e2f0c4` |
-| Secondary-200 | `#cbe59b` |
-| Secondary-300 | `#b0d572` |
-| Secondary-400 | `#94bf4a` |
-| **Secondary-500** | **`#76ab26`** (base) |
-| Secondary-600 | `#61931d` |
-| Secondary-700 | `#4e7a16` |
-| Secondary-800 | `#3d610f` |
-| Secondary-900 | `#2d4908` |
+| Primary-50  | `#e7ecf1` |
+| Primary-100 | `#cdd8e2` |
+| Primary-200 | `#a5b8ca` |
+| Primary-300 | `#7d98b3` |
+| Primary-400 | `#597c9e` |
+| **Primary-500** | **`#37618A`** (base) |
+| Primary-600 | `#2e5173` |
+| Primary-700 | `#243f5a` |
+| Primary-800 | `#192c3e` |
+| Primary-900 | `#0e1823` |
+
+**Secondary (`#EF8781`) — coral scale**
+
+| Token | Hex |
+|-------|-----|
+| Secondary-50  | `#fdf1f0` |
+| Secondary-100 | `#fbe1e0` |
+| Secondary-200 | `#f8c9c6` |
+| Secondary-300 | `#f5b1ad` |
+| Secondary-400 | `#f29b96` |
+| **Secondary-500** | **`#EF8781`** (base) |
+| Secondary-600 | `#c6706b` |
+| Secondary-700 | `#9b5854` |
+| Secondary-800 | `#6c3d3a` |
+| Secondary-900 | `#3c2220` |
 
 ### 2.2 Neutral & State Colors
 
@@ -69,8 +69,8 @@
 
 ### 2.3 Color Usage Rules
 
-1. **One primary action per view.** Use `btn-primary` (`#cd9536`) for the single most important action — never two competing primary buttons in one card.
-2. **Secondary is an accent.** `#76ab26` is for supporting elements (badges, icons, secondary charts, "done" chips) — not for large-filled buttons that compete with primary.
+1. **One primary action per view.** Use `btn-primary` (`#37618A`) for the single most important action — never two competing primary buttons in one card.
+2. **Secondary is an accent.** `#EF8781` is for supporting elements (badges, icons, secondary charts, "done" chips) — not for large-filled buttons that compete with primary.
 3. **Neutrals dominate.** Most surfaces, borders, and muted text use neutral scales. Brand colors are *highlights*, not the default carpet.
 4. **Never use brand colors for destructive actions** — always `danger`.
 5. **Contrast first.** Use Primary-600+ and Secondary-600+ as text on white. Use Primary-100/Secondary-100 as soft backgrounds with dark text.
@@ -224,7 +224,7 @@ Susunan elemen dari atas ke bawah pada halaman list data:
 
 Aturan turunan:
 
-- **Action button** memakai warna primary (brand gold `#cd9536`) dan wajib berlabel jelas + ikon Tabler (`ti-plus`).
+- **Action button** memakai warna primary (brand blue `#37618A`) dan wajib berlabel jelas + ikon Tabler (`ti-plus`).
 - **Tombol Export/Print** berada di sisi kanan row 1 card, memakai `btn btn-white` + label + ikon Tabler (`ti-download`, `ti-printer`).
 - **Tombol filter** (`Terapkan`) dan tombol reset memakai `btn btn-white`.
 - **Menu description** di bawah page title memakai `text-gray-600` (bukan `text-secondary`).
@@ -483,3 +483,37 @@ Setiap halaman create/edit & detail WAJIB memenuhi checklist berikut:
 - [ ] Form Actions: Cancel `btn btn-light border` + Submit primary, rata kanan, dipisah `border-top`.
 - [ ] Card memakai `card shadow-sm` (tanpa `border-0`), button **tanpa `rounded-circle`**.
 - [ ] Ikon memakai Tabler (`ti-*`) ukuran `16–20px` (bukan inline SVG).
+
+---
+
+## 13. Auth Pages (Login / Register)
+
+> **Berlaku untuk SEMUA halaman auth tanpa layout admin** — `login.blade.php` (full-height layout eiggen) dan halaman register/forgot-password yang akan dibuat ke depannya. Halaman auth WAJIB mengikuti aturan styling di bawah ini.
+
+### 13.1 Page Background
+
+- **Background halaman login WAJIB memakai warna primary dengan opacily 10%** — brand tint pada seluruh viewport, konsisten dengan brand palette (`#37618A`).
+- Implementasi memakai utilita `bg-primary` + variabel opacily `--ds-bg-opacity` yang sudah tersedia di `kejarkarir.css` (`.bg-primary { background-color: rgba(var(--ds-primary-rgb), var(--ds-bg-opacity, 1)) }`):
+
+  ```html
+  <body class="bg-primary" style="--ds-bg-opacity: 0.10;">
+  ```
+
+- **DILARANG hardcode hex di view** — jangan menulis `background-color: rgba(55, 97, 138, 0.10)` langsung di Blade. Referensi utilita `bg-*` / token `--ds-primary-rgb` dari `kejarkarir.css` (lihat Section 8).
+- Opacily `0.10` berlaku untuk **Light AND Dark mode** — `--ds-primary-rgb` tetap aktif di kedua mode, sehingga tint blue konsisten tanpa mengubah surface card.
+- **Card login tetap memakai surface default** (white/dark mode background) — hanya `body`/view port yang mendapat tint primary.
+
+### 13.2 Aturan Tambahan
+
+- Halaman auth memakai layout full-height eiggen (login.blade.php) — **jangan** extends `layouts.app` (Section 8).
+- Toggle theme (light/dark/auto) tetap tersedia di halaman login (dropdown bottom-right).
+- Content card login tidak berubah: `card card-lg`, label form 600 weight, input focus ring primary (Section 5.2).
+
+### 13.3 Checklist Penerapan
+
+Setiap halaman auth WAJIB memenuhi checklist berikut:
+
+- [ ] `<body>` memakai `class="bg-primary"` + `style="--ds-bg-opacity: 0.10;"` (tanpa hardcode hex).
+- [ ] Layout full-height eiggen (tanpa `layouts.app`).
+- [ ] Card login memakai surface default + `card shadow-sm` (tanpa `border-0`).
+- [ ] Toggle theme (light/dark/auto) tetap tersedia.

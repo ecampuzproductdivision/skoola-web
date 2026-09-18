@@ -4,36 +4,36 @@
    which ships as a precompiled theme.min.css exposing --ds-* CSS custom props (renamed Bootstrap vars).
 
    Palette:
-     Primary    #cd9536
-     Secondary  #76ab26
+     Primary    #37618A
+     Secondary  #EF8781
 
    Load AFTER theme.min.css. See design-rules.md for detail.
    ===================================================================== */
 
 :root {
-  /* --- Primary scale (#cd9536) --- */
-  --kk-primary-50:  #fdf4e3;
-  --kk-primary-100: #f9e3ba;
-  --kk-primary-200: #f2d08f;
-  --kk-primary-300: #e9ba64;
-  --kk-primary-400: #dda74b;
-  --kk-primary-500: #cd9536; /* base */
-  --kk-primary-600: #b57e2c;
-  --kk-primary-700: #9a681f;
-  --kk-primary-800: #7f5218;
-  --kk-primary-900: #5f3d11;
+  /* --- Primary scale (#37618A) --- */
+  --kk-primary-50:  #e7ecf1;
+  --kk-primary-100: #cdd8e2;
+  --kk-primary-200: #a5b8ca;
+  --kk-primary-300: #7d98b3;
+  --kk-primary-400: #597c9e;
+  --kk-primary-500: #37618A; /* base */
+  --kk-primary-600: #2e5173;
+  --kk-primary-700: #243f5a;
+  --kk-primary-800: #192c3e;
+  --kk-primary-900: #0e1823;
 
-  /* --- Secondary scale (#76ab26) --- */
-  --kk-secondary-50:  #f2f9e8;
-  --kk-secondary-100: #e2f0c4;
-  --kk-secondary-200: #cbe59b;
-  --kk-secondary-300: #b0d572;
-  --kk-secondary-400: #94bf4a;
-  --kk-secondary-500: #76ab26; /* base */
-  --kk-secondary-600: #61931d;
-  --kk-secondary-700: #4e7a16;
-  --kk-secondary-800: #3d610f;
-  --kk-secondary-900: #2d4908;
+  /* --- Secondary scale (#EF8781) --- */
+  --kk-secondary-50:  #fdf1f0;
+  --kk-secondary-100: #fbe1e0;
+  --kk-secondary-200: #f8c9c6;
+  --kk-secondary-300: #f5b1ad;
+  --kk-secondary-400: #f29b96;
+  --kk-secondary-500: #EF8781; /* base */
+  --kk-secondary-600: #c6706b;
+  --kk-secondary-700: #9b5854;
+  --kk-secondary-800: #6c3d3a;
+  --kk-secondary-900: #3c2220;
 }
 
 /* Redefine the theme's Bootstrap variables (light). The theme reads --ds-* at
@@ -42,8 +42,8 @@
 [data-bs-theme="light"],
 [data-bs-theme=light] {
   /* primary */
-  --ds-primary: #cd9536;
-  --ds-primary-rgb: 205, 149, 54;
+  --ds-primary: #37618A;
+  --ds-primary-rgb: 55, 97, 138;
   --ds-primary-lighter: var(--kk-primary-100);
   --ds-primary-light: var(--kk-primary-300);
   --ds-primary-dark: var(--kk-primary-700);
@@ -51,11 +51,11 @@
   --ds-primary-text-emphasis: var(--kk-primary-800);
   --ds-primary-bg-subtle: var(--kk-primary-100);
   --ds-primary-border-subtle: var(--kk-primary-300);
-  --ds-box-shadow-primary: rgba(205, 149, 54, 0.24) 0 8px 16px 0;
+  --ds-box-shadow-primary: rgba(55, 97, 138, 0.24) 0 8px 16px 0;
 
   /* secondary */
-  --ds-secondary: #76ab26;
-  --ds-secondary-rgb: 118, 171, 38;
+  --ds-secondary: #EF8781;
+  --ds-secondary-rgb: 239, 135, 129;
   --ds-secondary-lighter: var(--kk-secondary-100);
   --ds-secondary-light: var(--kk-secondary-300);
   --ds-secondary-dark: var(--kk-secondary-700);
@@ -65,11 +65,11 @@
   --ds-secondary-border-subtle: var(--kk-secondary-300);
 
   /* links & focus */
-  --ds-link-color: #cd9536;
-  --ds-link-color-rgb: 205, 149, 54;
+  --ds-link-color: #37618A;
+  --ds-link-color-rgb: 55, 97, 138;
   --ds-link-hover-color: var(--kk-primary-600);
-  --ds-link-hover-color-rgb: 181, 126, 44;
-  --ds-focus-ring-color: rgba(205, 149, 54, 0.25);
+  --ds-link-hover-color-rgb: 46, 81, 115;
+  --ds-focus-ring-color: rgba(55, 97, 138, 0.25);
 }
 
 /* dark mode equivalents (brighter tints on the dark surfaces) */
@@ -77,15 +77,15 @@
 [data-bs-theme=dark] {
   --ds-primary-text-emphasis: var(--kk-primary-300);
   --ds-secondary-text-emphasis: var(--kk-secondary-300);
-  --ds-primary-bg-subtle: #2a1f0a;
-  --ds-secondary-bg-subtle: #111703;
+  --ds-primary-bg-subtle: #0e1823;
+  --ds-secondary-bg-subtle: #3c2220;
   --ds-primary-border-subtle: var(--kk-primary-800);
   --ds-secondary-border-subtle: var(--kk-secondary-800);
   --ds-link-color: var(--kk-primary-300);
-  --ds-link-color-rgb: 233, 186, 100;
+  --ds-link-color-rgb: 125, 152, 179;
   --ds-link-hover-color: var(--kk-primary-200);
-  --ds-link-hover-color-rgb: 242, 208, 143;
-  --ds-focus-ring-color: rgba(233, 186, 100, 0.25);
+  --ds-link-hover-color-rgb: 165, 184, 202;
+  --ds-focus-ring-color: rgba(125, 152, 179, 0.25);
 }
 /* =====================================================================
    Part 2/2 — Component overrides.
@@ -94,52 +94,52 @@
    are set on the component itself, so we must re-declare them here.
    ===================================================================== */
 
-/* --- Buttons: primary (gold) --- */
+/* --- Buttons: primary (brand blue) --- */
 .btn-primary {
-  --ds-btn-bg: #cd9536;
-  --ds-btn-border-color: #cd9536;
+  --ds-btn-bg: #37618A;
+  --ds-btn-border-color: #37618A;
   --ds-btn-hover-bg: var(--kk-primary-600);
   --ds-btn-hover-border-color: var(--kk-primary-600);
-  --ds-btn-focus-shadow-rgb: 205, 149, 54;
+  --ds-btn-focus-shadow-rgb: 55, 97, 138;
   --ds-btn-active-bg: var(--kk-primary-700);
   --ds-btn-active-border-color: var(--kk-primary-700);
-  --ds-btn-disabled-bg: #cd9536;
-  --ds-btn-disabled-border-color: #cd9536;
+  --ds-btn-disabled-bg: #37618A;
+  --ds-btn-disabled-border-color: #37618A;
 }
 .btn-outline-primary {
-  --ds-btn-color: #cd9536;
-  --ds-btn-border-color: #cd9536;
-  --ds-btn-hover-bg: #cd9536;
-  --ds-btn-hover-border-color: #cd9536;
-  --ds-btn-focus-shadow-rgb: 205, 149, 54;
+  --ds-btn-color: #37618A;
+  --ds-btn-border-color: #37618A;
+  --ds-btn-hover-bg: #37618A;
+  --ds-btn-hover-border-color: #37618A;
+  --ds-btn-focus-shadow-rgb: 55, 97, 138;
   --ds-btn-active-bg: var(--kk-primary-700);
   --ds-btn-active-border-color: var(--kk-primary-700);
-  --ds-btn-disabled-color: #cd9536;
-  --ds-btn-disabled-border-color: #cd9536;
+  --ds-btn-disabled-color: #37618A;
+  --ds-btn-disabled-border-color: #37618A;
 }
 
-/* --- Buttons: secondary (brand green) --- */
+/* --- Buttons: secondary (brand coral) --- */
 .btn-secondary {
-  --ds-btn-bg: #76ab26;
-  --ds-btn-border-color: #76ab26;
+  --ds-btn-bg: #EF8781;
+  --ds-btn-border-color: #EF8781;
   --ds-btn-hover-bg: var(--kk-secondary-600);
   --ds-btn-hover-border-color: var(--kk-secondary-600);
-  --ds-btn-focus-shadow-rgb: 118, 171, 38;
+  --ds-btn-focus-shadow-rgb: 239, 135, 129;
   --ds-btn-active-bg: var(--kk-secondary-700);
   --ds-btn-active-border-color: var(--kk-secondary-700);
-  --ds-btn-disabled-bg: #76ab26;
-  --ds-btn-disabled-border-color: #76ab26;
+  --ds-btn-disabled-bg: #EF8781;
+  --ds-btn-disabled-border-color: #EF8781;
 }
 .btn-outline-secondary {
-  --ds-btn-color: #76ab26;
-  --ds-btn-border-color: #76ab26;
-  --ds-btn-hover-bg: #76ab26;
-  --ds-btn-hover-border-color: #76ab26;
-  --ds-btn-focus-shadow-rgb: 118, 171, 38;
+  --ds-btn-color: #EF8781;
+  --ds-btn-border-color: #EF8781;
+  --ds-btn-hover-bg: #EF8781;
+  --ds-btn-hover-border-color: #EF8781;
+  --ds-btn-focus-shadow-rgb: 239, 135, 129;
   --ds-btn-active-bg: var(--kk-secondary-700);
   --ds-btn-active-border-color: var(--kk-secondary-700);
-  --ds-btn-disabled-color: #76ab26;
-  --ds-btn-disabled-border-color: #76ab26;
+  --ds-btn-disabled-color: #EF8781;
+  --ds-btn-disabled-border-color: #EF8781;
 }
 
 /* --- Form controls: focus ring + checked state --- */
@@ -148,22 +148,22 @@
 .form-check-input:focus,
 .form-switch .form-check-input:focus {
   border-color: var(--kk-primary-400);
-  box-shadow: 0 0 0 0.25rem rgba(205, 149, 54, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(55, 97, 138, 0.25);
 }
 .form-check-input:checked {
-  background-color: #cd9536;
-  border-color: #cd9536;
+  background-color: #37618A;
+  border-color: #37618A;
 }
 
 /* --- Nav pills, dropdowns, tabs --- */
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  background-color: #cd9536;
+  background-color: #37618A;
   color: #fff;
 }
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #cd9536;
+  background-color: #37618A;
   color: #fff;
 }
 .nav-tabs .nav-link.active {
@@ -172,13 +172,13 @@
 
 /* --- Progress bars --- */
 .progress-bar {
-  background-color: #cd9536;
+  background-color: #37618A;
 }
 
 /* --- Pagination active --- */
 .page-item.active .page-link {
-  background-color: #cd9536;
-  border-color: #cd9536;
+  background-color: #37618A;
+  border-color: #37618A;
 }
 
 /* --- Utilities (keep text/bg/border brand tokens) --- */
@@ -199,12 +199,12 @@
 /* Avatar & badge emphasis helpers */
 .avatar-primary,
 .badge-primary {
-  background-color: #cd9536 !important;
+  background-color: #37618A !important;
   color: #fff !important;
 }
 .avatar-secondary,
 .badge-secondary {
-  background-color: #76ab26 !important;
+  background-color: #EF8781 !important;
   color: #fff !important;
 }
 /* =====================================================================
@@ -215,7 +215,7 @@
 
 /* --- Links --- */
 a {
-  color: #cd9536;
+  color: #37618A;
 }
 a:hover {
   color: var(--kk-primary-600);
@@ -223,78 +223,78 @@ a:hover {
 
 /* --- Subtle primary button (used across CRUD pages) --- */
 .btn-subtle-primary {
-  --ds-btn-color: #cd9536;
-  --ds-btn-bg: rgba(205, 149, 54, 0.11);
+  --ds-btn-color: #37618A;
+  --ds-btn-bg: rgba(55, 97, 138, 0.11);
   --ds-btn-hover-color: var(--kk-primary-700);
-  --ds-btn-hover-bg: rgba(205, 149, 54, 0.21);
-  --ds-btn-focus-shadow-rgb: 205, 149, 54;
+  --ds-btn-hover-bg: rgba(55, 97, 138, 0.21);
+  --ds-btn-focus-shadow-rgb: 55, 97, 138;
   --ds-btn-active-color: var(--kk-primary-700);
-  --ds-btn-active-bg: rgba(205, 149, 54, 0.21);
-  --ds-btn-disabled-color: #cd9536;
-  --ds-btn-disabled-bg: rgba(205, 149, 54, 0.21);
+  --ds-btn-active-bg: rgba(55, 97, 138, 0.21);
+  --ds-btn-disabled-color: #37618A;
+  --ds-btn-disabled-bg: rgba(55, 97, 138, 0.21);
 }
 
 /* --- Indeterminate checkbox & range thumbs --- */
 .form-check-input[type=checkbox]:indeterminate {
-  background-color: #cd9536;
-  border-color: #cd9536;
+  background-color: #37618A;
+  border-color: #37618A;
 }
 .form-range::-webkit-slider-thumb,
 .form-range::-moz-range-thumb {
-  background-color: #cd9536;
+  background-color: #37618A;
 }
 .form-range:focus::-webkit-slider-thumb,
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(205, 149, 54, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(55, 97, 138, 0.25);
 }
 
 /* --- Nav link focus ---- */
 .nav-link:focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(205, 149, 54, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(55, 97, 138, 0.25);
 }
 
 /* --- Per-component variables (theme declares them) --- */
 .nav-pills {
-  --ds-nav-pills-link-active-bg: #cd9536;
+  --ds-nav-pills-link-active-bg: #37618A;
   --ds-nav-pills-link-active-color: #fff;
 }
 .dropdown-menu,
 .dropdown-menu-dark {
-  --ds-dropdown-link-active-bg: #cd9536;
+  --ds-dropdown-link-active-bg: #37618A;
   --ds-dropdown-link-active-color: #fff;
 }
 .list-group {
-  --ds-list-group-active-bg: #cd9536;
-  --ds-list-group-active-border-color: #cd9536;
+  --ds-list-group-active-bg: #37618A;
+  --ds-list-group-active-border-color: #37618A;
   --ds-list-group-active-color: #fff;
 }
 .navbar {
-  --ds-navbar-hover-color: #cd9536;
+  --ds-navbar-hover-color: #37618A;
 }
 .progress,
 .progress-stacked {
-  --ds-progress-bar-bg: #cd9536;
+  --ds-progress-bar-bg: #37618A;
 }
 .pagination {
-  --ds-pagination-hover-bg: #cd9536;
-  --ds-pagination-hover-border-color: #cd9536;
-  --ds-pagination-focus-bg: #cd9536;
-  --ds-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(205, 149, 54, 0.25);
+  --ds-pagination-hover-bg: #37618A;
+  --ds-pagination-hover-border-color: #37618A;
+  --ds-pagination-focus-bg: #37618A;
+  --ds-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(55, 97, 138, 0.25);
 }
 .accordion {
-  --ds-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(205, 149, 54, 0.25);
+  --ds-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(55, 97, 138, 0.25);
 }
 .btn-close {
-  --ds-btn-close-focus-shadow: 0 0 0 0.25rem rgba(205, 149, 54, 0.25);
+  --ds-btn-close-focus-shadow: 0 0 0 0.25rem rgba(55, 97, 138, 0.25);
 }
 
 /* --- Avatar initials (background lives on the child) --- */
 .avatar-primary .avatar-initials {
-  background-color: #cd9536;
+  background-color: #37618A;
   color: var(--ds-white);
 }
 .avatar-secondary .avatar-initials {
-  background-color: #76ab26;
+  background-color: #EF8781;
   color: var(--ds-white);
 }
 
@@ -306,17 +306,17 @@ a:hover {
 .carousel-control-prev:hover,
 .carousel-control-next:focus,
 .carousel-control-prev:focus {
-  color: #cd9536;
+  color: #37618A;
 }
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-  filter: invert(58%) sepia(52%) saturate(600%) hue-rotate(355deg) brightness(92%);
+  filter: invert(45%) sepia(4%) saturate(50%) hue-rotate(168deg) brightness(80%) contrast(104%);
 }
 .carousel-indicators [data-bs-target] {
-  background-color: #cd9536;
+  background-color: #37618A;
 }
 
 /* --- Flatpickr selected week (audit date picker) --- */
 .flatpickr-day.week.selected {
-  box-shadow: -5px 0 0 #cd9536, 5px 0 0 var(--ds-primary);
+  box-shadow: -5px 0 0 #37618A, 5px 0 0 var(--ds-primary);
 }
